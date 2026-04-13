@@ -74,7 +74,7 @@ async def start_cmd(client, message):
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
              InlineKeyboardButton("𝖧𝖾𝗅𝗉", callback_data="help")],
-            [InlineKeyboardButton("𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 💬", url="https://t.me/sexyshnwaz")]
+            [InlineKeyboardButton("𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 ", url="https://t.me/sexyshnwaz")]
         ])
     )
 
@@ -103,9 +103,9 @@ def parse_button_markup(text: str):
 async def total_users(client: Client, message: Message):
     try:
         users = await tb.get_all_users()
-        await message.reply_text(f"👥 **Total Users:** {len(users)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 𝖢𝗅𝗈𝗌𝖾", callback_data="close")]]))
+        await message.reply_text(f"**Total Users:** {len(users)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 𝖢𝗅𝗈𝗌𝖾", callback_data="close")]]))
     except Exception as e:
-        r=await message.reply(f"❌ *Error:* `{str(e)}`")
+        r=await message.reply(f"*Error:* `{str(e)}`")
         await asyncio.sleep(30)
         await r.delete()
 
@@ -113,7 +113,7 @@ async def total_users(client: Client, message: Message):
 async def broadcasting_func(client: Client, message: Message):
     if not message.reply_to_message:
         return await message.reply("<b>Reply to a message to broadcast.</b>")
-    msg = await message.reply_text("📢 Starting broadcast...")
+    msg = await message.reply_text("Starting broadcast...")
     to_copy_msg = message.reply_to_message
     users_list = await tb.get_all_users()
     total_before = len(users_list)
@@ -160,11 +160,11 @@ async def broadcasting_func(client: Client, message: Message):
         if i % 20 == 0 or i == total_before:
             try:
                 await msg.edit(
-                    f"😶‍🌫 Broadcasting...\n\n"
-                    f"👥 Total Users: {total_before}\n"
-                    f"✅ Successful: <code>{len(completed_users)}</code>\n"
-                    f"❌ Failed/Removed: <code>{failed}</code>\n"
-                    f"⚙️ Progress: {i}/{total_before}"
+                    f"Broadcasting...\n\n"
+                    f"Total Users: {total_before}\n"
+                    f"Successful: <code>{len(completed_users)}</code>\n"
+                    f"Failed/Removed: <code>{failed}</code>\n"
+                    f"Progress: {i}/{total_before}"
                 )
             except Exception:
                 pass
@@ -194,11 +194,11 @@ async def broadcasting_func(client: Client, message: Message):
     active_users = len(completed_users)
 
     await msg.edit(
-        f"🎯 <b>Broadcast Completed</b>\n\n"
-        f"👥 Total Users (Before): <code>{total_before}</code>\n"
-        f"✅ Successful: <code>{len(completed_users)}</code>\n"
-        f"❌ Failed/Removed: <code>{failed}</code>\n"
-        f"📊 Active Users (Now): <code>{active_users}</code>",
+        f"<b>Broadcast Completed</b>\n\n"
+        f"otal Users (Before): <code>{total_before}</code>\n"
+        f"Successful: <code>{len(completed_users)}</code>\n"
+        f"Failed/Removed: <code>{failed}</code>\n"
+        f"Active Users (Now): <code>{active_users}</code>",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]),
         )
 
