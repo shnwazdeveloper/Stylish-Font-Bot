@@ -72,9 +72,9 @@ async def start_cmd(client, message):
         photo=random.choice(PICS),
         caption=text.START.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
-             InlineKeyboardButton("📚 𝖧𝖾𝗅𝗉", callback_data="help")],
-            [InlineKeyboardButton("💬 𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 💬", url="https://telegram.me/TechifySupport")]
+            [InlineKeyboardButton("𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
+             InlineKeyboardButton("𝖧𝖾𝗅𝗉", callback_data="help")],
+            [InlineKeyboardButton("𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 💬", url="https://t.me/sexyshnwaz")]
         ])
     )
 
